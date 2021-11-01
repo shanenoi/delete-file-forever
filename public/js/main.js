@@ -49,3 +49,53 @@ $("#input-file").change(() => {
 })
 
 $('#username').val(localStorage['username'])
+
+Object.defineProperty(String.prototype, 'hashCode', {
+  value: function() {
+    var hash = 0, i, chr;
+    for (i = 0; i < this.length; i++) {
+      chr   = this.charCodeAt(i);
+      hash  = ((hash << 5) - hash) + chr;
+      hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+  }
+});
+
+const setCookie = (cname, cvalue, exdays) => {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+const getCookie = (cname) => {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+const login = () => {
+  username = $("#username").val()
+  password = $("#password").val()
+
+  $.ajax({
+    type: "POST",
+    url: `http://127.0.0.1:${localStorage['serverPort']}/sudo/login`,
+    data: JSON.stringify({ username, password }),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function(data) {alert(data);},
+    error: function(errMsg) {alert(errMsg);}
+  });
+}

@@ -1,19 +1,13 @@
-var child_process = require('child_process');
+const server = require('./src/api/server')
+const system = require('./src/utils/system');
 
-function systemSync(cmd) {
-  var result = {
-    code: 0,
-    message: "",
-    response: "",
-  }
-  try {
-    result.response = child_process.execSync(cmd).toString();
-  } 
-  catch (error) {
-    result.code = error.status;
-  }
-  return result
-};
+const serverPort = 3264
+
+localStorage['username'] = require("os").userInfo().username
+localStorage['serverPort'] = serverPort
+
+server.run(serverPort)
+
 
 window.addEventListener('DOMContentLoaded', () => {
   const replaceText = (selector, text) => {
@@ -26,24 +20,3 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 })
 
-localStorage['username'] = require("os").userInfo().username
-
-const express = require('express')
-const app = express()
-const port = 3000
-
-app.use(express.json()) // for parsing application/json
-app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
-app.post('/login', (req, res) => {
-  console.log(req.body);
-  res.send(JSON.stringify(systemSync("pwd")))
-})
-
-app.listen(port, () => {
-  console.log(`server on at http://localhost:${port}`)
-})
