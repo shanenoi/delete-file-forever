@@ -1,5 +1,6 @@
 const express = require('express')
 const system = require('../utils/system');
+const rm = require('../utils/rm');
 const app = express()
 
 app.use(express.json())
@@ -10,10 +11,21 @@ app.get('/', (req, res) => {
 })
 
 app.post('/sudo/login', (req, res) => {
-  var result = 
   res.send(JSON.stringify(
     system.checkRootPassword(req.body.username, req.body.password)
   ))
+})
+
+app.post('/sudo/rm-normal', (req, res) => {
+  req.body.files.forEach(file => rm.normal(file))
+  data = "Okie nạ"
+  res.send(JSON.stringify({ data }))
+})
+
+app.post('/sudo/rm-gutmann', (req, res) => {
+  req.body.files.forEach(file => rm.normal(file))
+  okie = "Okie nạ"
+  res.send(JSON.stringify({ okie }))
 })
 
 const run = (port) => {

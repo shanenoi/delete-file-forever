@@ -95,7 +95,40 @@ const login = () => {
     data: JSON.stringify({ username, password }),
     contentType: "application/json; charset=utf-8",
     dataType: "json",
-    success: function(data) {alert(data);},
+    success: function(data) {confirm(data);},
     error: function(errMsg) {alert(errMsg);}
   });
+}
+
+const rm_files = (path) => {
+  var files = Array.from($('#input-file')[0].files).map(item => item.path)
+
+  $.ajax({
+    type: "POST",
+    url: `http://127.0.0.1:${localStorage['serverPort']}${path}`,
+    data: JSON.stringify({ files }),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function(data) {
+      confirm(data.data);
+      $('#notification-trigger').click()
+    },
+    error: function(errMsg) {alert(errMsg);}
+  });
+}
+
+const deletefiles = () => {
+  var delete_method = $('#field-4');
+  if (delete_method.val() == 'normal') {
+    return rm_files('/sudo/rm-normal')
+  } else if (delete_method.val() == 'gutmann') {
+    return rm_files('/sudo/rm-gutmann')
+  }
+}
+
+const showToast = (content) => {
+  var x = $("#snackbar")[0];
+  x.className = "show";
+  x.innerText = content;
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }
