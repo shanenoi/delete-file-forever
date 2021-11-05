@@ -85,6 +85,14 @@ const getCookie = (cname) => {
   return "";
 }
 
+const login_button = () => {
+  if ($('#input-file')[0].files.length == 0) {
+    showToast("Hãy Chọn Tệp Tin");
+  } else {
+    $('#login-trigger').click();
+  }
+}
+
 const login = () => {
   username = $("#username").val()
   password = $("#password").val()
@@ -95,8 +103,8 @@ const login = () => {
     data: JSON.stringify({ username, password }),
     contentType: "application/json; charset=utf-8",
     dataType: "json",
-    success: function(data) {confirm(data);},
-    error: function(errMsg) {alert(errMsg);}
+    success: function(data) {deletefiles();},
+    error: function(errMsg) {showToast('Đăng Nhập Thất Bại');}
   });
 }
 
@@ -110,8 +118,10 @@ const rm_files = (path) => {
     contentType: "application/json; charset=utf-8",
     dataType: "json",
     success: function(data) {
-      confirm(data.data);
-      $('#notification-trigger').click()
+      $('#exampleModalCenter').click();
+
+      $("#field-3")[0].textContent = `Đã chọn 0 tập tin`;
+      showToast('Xóa Tập Tin Thành Công')
     },
     error: function(errMsg) {alert(errMsg);}
   });
@@ -120,9 +130,9 @@ const rm_files = (path) => {
 const deletefiles = () => {
   var delete_method = $('#field-4');
   if (delete_method.val() == 'normal') {
-    return rm_files('/sudo/rm-normal')
+    return rm_files('/sudo/rm-normal');
   } else if (delete_method.val() == 'gutmann') {
-    return rm_files('/sudo/rm-gutmann')
+    return rm_files('/sudo/rm-gutmann');
   }
 }
 
