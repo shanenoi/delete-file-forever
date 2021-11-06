@@ -18,13 +18,13 @@ app.post('/sudo/login', (req, res) => {
 
 app.post('/sudo/rm-normal', (req, res) => {
   req.body.files.forEach(file => rm.normal(file))
-  data = "Okie nạ"
+  data = "Xóa thành công"
   res.send(JSON.stringify({ data }))
 })
 
 app.post('/sudo/rm-gutmann', (req, res) => {
   req.body.files.forEach(file => rm.gutmann(file))
-  data = "Okie nạ"
+  data = "Xóa thành công"
   res.send(JSON.stringify({ data }))
 })
 

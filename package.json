@@ -1,26 +1,25 @@
 {
-  "name": "electron-quick-start",
+  "name": "delete-file-forever",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Safe delete files",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/shanenoi/delete-file-forever",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "electron",
+    "nodejs",
+    "expressjs",
+    "webflow",
+    "delete-files"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "Shanenoi <shanenoi.org@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "electron": "^15.3.0"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "tmp": "^0.2.1"
+    "express": "^4.17.1"
   }
 }
