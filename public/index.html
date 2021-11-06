@@ -8,11 +8,11 @@
         <title>Delete File Forever</title>
         <meta content="width=device-width, initial-scale=1" name="viewport">
         <meta content="Webflow" name="generator">
-        <link rel="stylesheet" href="public/css/bootstrap.min.css" crossorigin="anonymous">
-        <link rel="stylesheet" href="public/css/main.css">
-        <script src="public/js/jquery.js" type="text/javascript"></script>
-        <script src="public/js/bootstrap.min.js"></script>
-        <script src="public/js/html5shiv.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/jquery.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/html5shiv.min.js" type="text/javascript"></script>
         <script type="text/javascript">
             ! function(o, c) {
                 var n = c.documentElement,
@@ -99,11 +99,11 @@
                         <div class="form-input input-size">
                             <div class="div-block-10">
                                 <input type="file" style="display:none;" id="input-file" multiple>
-                                <p class="text-field w-input" id="field-3" onclick="$('#input-file').click()"></p>Chọn tập tin <select id="field-4" name="field-4" required="" class="select-field w-select">
+                                <p class="text-field w-input" id="field-3" onclick="$('#input-file').click()">Chọn tập tin</p><select id="field-4" name="field-4" required="" class="select-field w-select">
                                     <option value="normal"> Ghi Đè Thông Thường </option>
                                     <option value="gutmann"> Ghi Đè Gutmann </option>
                                 </select>
-                                <div class="fs-4 mb-3 d-flex justify-content-center" style="cursor: pointer" data-toggle="modal" data-target="#method-info">
+                                <div class="fs-4 mb-3 d-flex justify-content-center" style="cursor: pointer" data-toggle="modal" onclick="window.open('./methods.html')">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentcolor" class="bi bi-info-circle" viewbox="0 0 16 16">
                                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
                                         <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
@@ -118,24 +118,6 @@
                     </form>
                     <div class="w-form-done"></div>
                     <div class="w-form-fail"></div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="method-info" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body"> ... </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -179,7 +161,7 @@
             </div>
         </div>
         <div id="snackbar"></div>
-        <script src="public/js/main.js" type="text/javascript"></script>
+        <script src="js/main.js" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script>
     </body>
 </html>

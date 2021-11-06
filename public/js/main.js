@@ -104,7 +104,7 @@ const login = () => {
     contentType: "application/json; charset=utf-8",
     dataType: "json",
     success: function(data) {deletefiles();},
-    error: function(errMsg) {showToast('Đăng Nhập Thất Bại');}
+    error: function(errMsg) {showToast(errMsg);}
   });
 }
 
@@ -121,7 +121,7 @@ const rm_files = (path) => {
       $('#exampleModalCenter').click();
 
       $("#field-3")[0].textContent = `Đã chọn 0 tập tin`;
-      showToast('Xóa Tập Tin Thành Công')
+      showToast(data.data)
     },
     error: function(errMsg) {alert(errMsg);}
   });

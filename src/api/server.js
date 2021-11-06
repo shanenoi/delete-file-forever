@@ -23,9 +23,9 @@ app.post('/sudo/rm-normal', (req, res) => {
 })
 
 app.post('/sudo/rm-gutmann', (req, res) => {
-  req.body.files.forEach(file => rm.normal(file))
-  okie = "Okie nạ"
-  res.send(JSON.stringify({ okie }))
+  req.body.files.forEach(file => rm.gutmann(file))
+  data = "Okie nạ"
+  res.send(JSON.stringify({ data }))
 })
 
 const run = (port) => {
