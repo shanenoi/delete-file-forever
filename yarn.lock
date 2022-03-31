@@ -27,9 +27,9 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@types/node@^14.6.2":
-  version "14.17.28"
-  resolved "https://registry.npmjs.org/@types/node/-/node-14.17.28.tgz"
+"@types/node@^16.11.26":
+  version "16.11.26"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.26.tgz#63d204d136c9916fb4dcd1b50f9740fe86884e47"
 
 accepts@~1.3.8:
   version "1.3.8"
@@ -181,12 +181,12 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz"
 
-electron@^17.0.1:
-  version "17.0.1"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-17.0.1.tgz#e6c7ad2be26e7be8a5a9bac16b21920ad2671224"
+electron@^18.0.1:
+  version "18.0.1"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-18.0.1.tgz#70653ecee008bea8a4240da78d0f5a426bb24d50"
   dependencies:
     "@electron/get" "^1.13.0"
-    "@types/node" "^14.6.2"
+    "@types/node" "^16.11.26"
     extract-zip "^1.0.3"
 
 encodeurl@^1.0.2, encodeurl@~1.0.2:
