@@ -190,9 +190,9 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz"
 
-electron@^18.2.0:
-  version "18.2.0"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-18.2.0.tgz#a0cbf8d5d1a1e9d1c195d86cd6937e721ed60fec"
+electron@^18.2.4:
+  version "18.2.4"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-18.2.4.tgz#3ea3392f008ea4bdf66b0e3b2e1769e04370323c"
   dependencies:
     "@electron/get" "^1.13.0"
     "@types/node" "^16.11.26"
